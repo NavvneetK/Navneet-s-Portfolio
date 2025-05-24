@@ -9,9 +9,13 @@ import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from 'react-icons/fa';
 
 export const Home = () => {
   return (
-    <section id="home" className="min-h-screen relative mt-20">
+    
+    <section id="home" className="min-h-screen relative ">
+      <div className="absolute top-0 left-0 z-10">
+        <img src="/images/bg.png" alt="" />
+      </div>
       <RevealOnScroll>
-        <div className="flex flex-row h-full relative z-10">
+        <div className="flex flex-row h-full relative z-10 mt-20">
           
           {/* LEFT SIDE: Text Content */}
           <div className="w-2/3 z-10 px-4 ml-8">
@@ -30,6 +34,8 @@ export const Home = () => {
               user-friendly experiences. Enthusiastic about building innovative solutions
               that blend creativity with cutting-edge technology.
             </p>
+
+            
 
             <div className="flex space-x-4">
               <a
@@ -53,13 +59,7 @@ export const Home = () => {
           <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500 blur-3xl opacity-20 rounded-full"></div>
           <div className="absolute top-0 right-0 w-96 h-96 bg-pink-500 blur-3xl opacity-20 rounded-full"></div>
 
-            {/* <div className="absolute top-0 right-0 left-0 flex justify-center gap-6 animate-float z-10">
-              <FaHtml5 className="text-orange-500 text-4xl hover:scale-110 transition-transform duration-300" />
-              <FaCss3Alt className="text-blue-500 text-4xl hover:scale-110 transition-transform duration-300" />
-              <FaJs className="text-yellow-400 text-4xl hover:scale-110 transition-transform duration-300" />
-              <FaReact className="text-cyan-400 text-4xl hover:scale-110 transition-transform duration-300" />
-              <FaNodeJs className="text-green-400 text-4xl hover:scale-110 transition-transform duration-300" />
-            </div> */}
+            
 
           <div className="w-2/3 h-[40rem] mt-0 mb-20rem z-20">
             <Spline scene="https://prod.spline.design/DTvYqmGyGkHL5LlQ/scene.splinecode" />
