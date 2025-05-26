@@ -3,7 +3,7 @@ import { RevealOnScroll } from "../RevealOnScroll";
 import pp from '../../assets/pp.jpg';
 import Spline from "@splinetool/react-spline";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from 'react-icons/fa';
-import Button from '../../helpcomponents/Button';
+import Button from '../../helpcomponents/Button.jsx';
 
 export const Home = () => {
   return (
