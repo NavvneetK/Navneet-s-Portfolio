@@ -16,19 +16,20 @@ return (
     <a
       href={`#${id ?? ""}`}
       onClick={handleClick}
-      className=" flex flex-row items-center gap-3 rounded-full relative z-20 cursor-pointer group "
+      className=" flex flex-row items-center gap-3 relative z-20 cursor-pointer group "
     >
-      <div className="px-4 py-4 rounded-lg  cursor-pointer overflow-hidden">
-        <div className="absolute -right-5 top-1/2 -translate-y-1/2  
-          w-[115%] h-[85%] group-hover:w-10 group-hover:h-10 group-hover:right-0.77
-          rounded-full bg-white/50 transition-all duration-500 " />
+      <div className="px-4 py-4 pl-5 cursor-pointer overflow-hidden">
+        <div className="absolute rounded-lg bg-white/60 -right-5 top-1/2 -translate-y-1/2  
+          w-[115%] h-[85%] group-hover:w-10 group-hover:h-10 group-hover:rounded-full 
+          group-hover:right-0.77 
+           transition-all duration-500  " />
 
         <p className="uppercase md:text-lg text-black transition-all duration-500
           group-hover:text-white group-hover:-translate-x-2 xl:translate-x-0 -translate-x-1">
           {text}
         </p>
 
-        <div className="group-hover:bg-white/50 w-10 h-10 rounded-full absolute -right-5 top-1/2 
+        <div className="opacity-0 group-hover:opacity-100 group-hover:bg-white/50 w-10 h-10 rounded-full absolute -right-5 top-1/2 
           -translate-y-1/2 flex justify-center items-center overflow-hidden ">
           <img
             className="w-5 h-5 xl:-translate-y-32 translate-y-0  
