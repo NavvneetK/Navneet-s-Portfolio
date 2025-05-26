@@ -2,10 +2,8 @@ import React from 'react';
 import { RevealOnScroll } from "../RevealOnScroll";
 import pp from '../../assets/pp.jpg';
 import Spline from "@splinetool/react-spline";
-// If using Next.js and SSR, use dynamic import:
-// import dynamic from 'next/dynamic';
-// const Spline = dynamic(() => import('@splinetool/react-spline'), { ssr: false });
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from 'react-icons/fa';
+import Button from '../../helpcomponents/Button';
 
 export const Home = () => {
   return (
@@ -37,14 +35,16 @@ export const Home = () => {
 
             
 
-            <div className="flex space-x-4">
-              <a
+            <div className="flex space-x-10">
+              {/* <a
                 href="#projects"
                 className="bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59, 130, 246, 0.4)]"
               >
                 View Projects
-              </a>
-
+              </a> */}
+              <Button
+                text="View Projects"
+                id="projects"></Button>
               <a
                 href="#contact"
                 className="border border-blue-500/50 text-blue-500 py-3 px-6 rounded font-medium transition-all duration-200 

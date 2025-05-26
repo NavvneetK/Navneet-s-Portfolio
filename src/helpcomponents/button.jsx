@@ -1,43 +1,45 @@
-/**
- * A reusable CTA button component.
- * When clicked, it scrolls smoothly to the section with ID "counter",
- * with a small offset from the top for better visual placement.
- */
 import React from "react";
-import "../index.css"
 
-const Button = ({ text, className, id }) => {
-    return (
-      <a
-        onClick={(e) => {
-          e.preventDefault(); // Stop the link from jumping instantly
-  
-          const target = document.getElementById("projects"); // Find the section with ID "counter"
-  
-          // Only scroll if we found the section and an ID is passed in
-          // taht prevents the contact button from scrolling to the top
-          if (target && id) {
-            const offset = window.innerHeight * 0.15; // Leave a bit of space at the top
-  
-            // Calculate how far down the page we need to scroll
-            const top =
-              target.getBoundingClientRect().top + window.pageYOffset - offset;
-  
-            // Scroll smoothly to that position
-            window.scrollTo({ top, behavior: "smooth" });
-          }
-        }}
-        className={`${className ?? ""} cta-wrapper`} // Add base + extra class names
-      >
-        <div className="cta-button group">
-          <div className="bg-circle" />
-          <p className="text">{text}</p>
-          <div className="arrow-wrapper">
-            <img src="/images/arrow-down.svg" alt="arrow" />
-          </div>
-        </div>
-      </a>
-    );
+const Button = ({ text,  id }) => {
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    const target = document.getElementById(id);
+    if (target && id) {
+      const offset = window.innerHeight * 0.15;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
   };
-  
-  export default Button;
+
+return (
+    <a
+      href={`#${id ?? ""}`}
+      onClick={handleClick}
+      className=" flex flex-row items-center gap-3 rounded-full relative z-20 cursor-pointer group "
+    >
+      <div className="px-4 py-4 rounded-lg  cursor-pointer overflow-hidden">
+        <div className="absolute -right-5 top-1/2 -translate-y-1/2  
+          w-[115%] h-[85%] group-hover:w-10 group-hover:h-10 group-hover:right-0.77
+          rounded-full bg-white/50 transition-all duration-500 " />
+
+        <p className="uppercase md:text-lg text-black transition-all duration-500
+          group-hover:text-white group-hover:-translate-x-2 xl:translate-x-0 -translate-x-1">
+          {text}
+        </p>
+
+        <div className="group-hover:bg-white/50 w-10 h-10 rounded-full absolute -right-5 top-1/2 
+          -translate-y-1/2 flex justify-center items-center overflow-hidden ">
+          <img
+            className="w-5 h-5 xl:-translate-y-32 translate-y-0  
+            animate-bounce group-hover:translate-y-0 transition-all duration-500"
+            src="/images/arrow-down.svg"
+            alt="arrow"
+          />
+        </div>
+      </div>
+    </a>
+);
+};
+
+export default Button;

@@ -1,6 +1,16 @@
 import { RevealOnScroll } from "../RevealOnScroll";
+import {useEffect} from "react";
+import { initializeTilt } from "../../helpcomponents/TiltCard";
+
+
 
 export const Projects = () => {
+
+  useEffect(() => {
+  initializeTilt();
+}, []);
+
+
   return (
     <section
       id="projects"
@@ -8,12 +18,17 @@ export const Projects = () => {
     >
       <RevealOnScroll>
         <div className="max-w-5xl mx-auto px-4">
+
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
             {" "}
             Featured Projects
           </h2>
+
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
+            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-700/30 hover:shadow-[0_2px_12px_rgba(59,130,246,0.4)] transition
+            "data-tilt
+           data-tilt-glare>
               <h3 className="text-xl font-bold mb-2">Age and Gender Prediction</h3>
               <p className="text-gray-400 mb-4">
               Created a real-time facial recognition model using CNNs and OpenCV, achieving 75% accuracy in predicting age and gender from live video streams.
@@ -48,6 +63,8 @@ export const Projects = () => {
               hover:shadow-[0_4px_20px_rgba(59,130,246,0.1)]
               transition-all
             "
+              data-tilt
+              data-tilt-glare
             >
               <h3 className="text-xl font-bold mb-2">Facial Expression Recognition</h3>
               <p className="text-gray-400 mb-4">
