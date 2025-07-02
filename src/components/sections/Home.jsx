@@ -4,6 +4,7 @@ import pp from '../../assets/pp.jpg';
 import Spline from "@splinetool/react-spline";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs } from 'react-icons/fa';
 import Button from '../../helpcomponents/Button.jsx';
+import  RotatingText  from '../RotatingText.jsx';
 
 export const Home = () => {
   return (
@@ -13,24 +14,36 @@ export const Home = () => {
         <img src="/images/bg.png" alt="" />
       </div>
       <RevealOnScroll>
-        <div className="flex flex-row h-full relative z-10 mt-20">
+        <div className="flex flex-row h-full relative z-10 mt-28">
           
           {/* LEFT SIDE: Text Content */}
           <div className="w-2/3 z-10 px-4 ml-8">
             <div className="flex flex-col justify-center mb-8">
               <div className="w-60 h-60 rounded-full overflow-hidden mb-4 shadow-lg">
-                <img src={pp} alt="Profile" />
+                <img src={pp} alt="Profile" className='rounded-full transition-transform duration-300 hover:scale-110' />
               </div>
             </div>
 
-            <h1 className="text-3xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-              Hi, I'm Navneet Kaur
-            </h1>
+           <h1 className="text-3xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent flex flex-wrap items-center gap-x-2">
+  <span>Hi, I'm</span>
+
+  <RotatingText
+    texts={['Navneet Kaur', 'Web Dev🌐', 'Dev Scout 🚀', 'React Fan ⚛️','DSA Geek 👩‍💻','DOM Tamer 🕸️']}
+    mainClassName="px-2 sm:px-2 md:px-3 overflow-hidden py-0.5 sm:py-1 md:py-2 rounded-lg text-white text-xl md:text-6xl font-bold"
+    staggerFrom={"last"}
+    initial={{ y: "100%" }}
+    animate={{ y: 0 }}
+    exit={{ y: "-120%" }}
+    staggerDuration={0.025}
+    splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+    transition={{ type: "spring", damping: 30, stiffness: 400 }}
+    rotationInterval={2000}
+  />
+</h1>
+
 
             <p className="text-gray-400 text-lg mb-8 max-w-lg leading-relaxed">
-              Passionate web developer with a keen eye for creating dynamic, 
-              user-friendly experiences. Enthusiastic about building innovative solutions
-              that blend creativity with cutting-edge technology.
+              I’m an undergraduate CSE student at NIT Kurukshetra who loves turning caffeine and code into clean, functional web experiences..
             </p>
 
             
@@ -61,9 +74,9 @@ export const Home = () => {
 
             
 
-          <div className="w-2/3 h-[40rem] mt-0 mb-20rem z-20">
+          {/* <div className="w-2/3 h-[40rem] mt-0 mb-20rem z-20">
             <Spline scene="https://prod.spline.design/DTvYqmGyGkHL5LlQ/scene.splinecode" />
-          </div>
+          </div> */}
 
         </div>
       </RevealOnScroll>
